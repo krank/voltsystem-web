@@ -64,26 +64,13 @@ nav.games ul span {
   border-radius: 1em;
 }
 
-nav.games.smallies ul span {
-  text-transform: uppercase;
-  margin-top: .25em;
-}
+nav.games ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-nav.games.biggies ul li {
-  margin-bottom: 3em;
-  margin-left: 2em;
-  margin-right: 2em;
-}
-
-nav.games.smallies ul li {
-  margin-left: 2em;
-  margin-right: 2em;
-}
-
-nav.games img {
-  border-radius: 50%;
-  border: .5em solid transparent;
-  box-sizing: border-box;
+  text-decoration: none;
+  color: #000;
 }
 
 nav.games a:hover img {
@@ -94,11 +81,35 @@ nav.games a:hover span {
   background-color: yellow;
 }
 
-
-nav.games a {
-  text-decoration: none;;
-  color: #000;
+nav.games img {
+  border-radius: 50%;
+  border: .5em solid transparent;
+  box-sizing: border-box;
 }
+
+
+
+/* BIGGIES */
+
+nav.games.biggies ul li {
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 3em;
+}
+
+/* SMALLIES */
+
+nav.games.smallies ul li {
+  margin-left: .5em;
+  margin-right: .5em;
+  margin-bottom: 3em;
+}
+
+nav.games.smallies ul span {
+  text-transform: uppercase;
+  margin-top: .25em;
+}
+
 
 
 /* OTHER / BOTTOM */
