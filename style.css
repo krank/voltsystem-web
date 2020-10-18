@@ -1,9 +1,17 @@
 html {
-  background-color:#f0f0f0;
+  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 11pt;
+  min-height: 100vh;
+}
+
+body,
+footer {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 1.5em;
 }
 
 body {
@@ -11,25 +19,43 @@ body {
   max-width: 916px;
   width: 100vw;
   margin: 0;
+  row-gap: 2em;
+  grid-template-rows: /* If using "repeat", negative row designation seems to not work. Weird. */
+    min-content
+    min-content
+    min-content
+    min-content
+    min-content
+    1fr
+    min-content;
 }
 
+nav {
+  grid-column: 2 / -2;
+}
+
+/* HEADER */
+
 header {
+  grid-column-start: 2;
+  grid-column-end: -2;
   display: flex;
   justify-content: center;
 }
 
 header img {
-  height: 16em;
-  display: flex;
+  max-height: 16em;
+  max-width: 100%;
 }
-
 
 /* MAIN */
 
 main {
-  padding: 3em 6em;
-  column-width: 15em;
-  column-gap: 4.5em;
+  grid-column-start: 2;
+  grid-column-end: -2;
+
+  column-width: 17em;
+  column-gap: 1.5em;
 }
 
 main p {
@@ -41,27 +67,15 @@ main p + p {
   text-indent: 1em;
 }
 
-
 /* GAMES */
 
 nav.games {
-  padding: 0em 3.5em;
-}
-
-nav.games {
-  list-style-type: none;
-  padding-left: 0;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-}
-
-nav.games a span {
-  display: block;
-  text-align: center;
-  margin-top: .5em;
-  padding: .25em 1em;
-  border-radius: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 nav.games a {
@@ -73,60 +87,80 @@ nav.games a {
   color: #000;
 }
 
+nav.games img {
+  border-radius: 50%;
+  border: 0.5em solid transparent;
+}
+
+nav.games a span {
+  display: block;
+  text-align: center;
+  margin-top: 0.5em;
+  padding: 0.25em 1em;
+  border-radius: 1em;
+}
+
 nav.games a:hover img {
   border-color: yellow;
 }
-
 nav.games a:hover span {
   background-color: yellow;
 }
 
-nav.games img {
-  border-radius: 50%;
-  border: .5em solid transparent;
-  box-sizing: border-box;
-}
-
-
-
 /* BIGGIES */
 
+nav.games.smallies img {
+  width: 190px;
+}
+
 nav.games.biggies a {
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-bottom: 3em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 /* SMALLIES */
 
+nav.games.smallies img {
+  width: 85px;
+}
+
 nav.games.smallies a {
-  margin-left: .5em;
-  margin-right: .5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   margin-bottom: 3em;
 }
 
 nav.games.smallies span {
-  text-transform: uppercase;
-  margin-top: .25em;
+  margin-top: 0.25em;
 }
 
+/* OTHER */
 
-
-/* OTHER / BOTTOM */
-
-section.other {
-  margin-top: 4em;
-}
-
-h2 {
+.other h2 {
+  width: 100%;
   text-align: center;
-  text-transform: uppercase;
-
 }
+
+/* FOOTER */
 
 footer {
-  margin-top: 4em;
   background-color: #333333;
   color: #fff;
-  padding: 2em 5em;
+  padding: 2em 0em;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: -2;
+}
+
+footer p {
+  grid-column: 2 / 12;
+}
+
+footer p a {
+  color: #fff;
+}
+
+footer img {
+  height: 1em;
 }
