@@ -48,7 +48,7 @@ nav.games {
   padding: 0em 3.5em;
 }
 
-nav.games ul {
+nav.games {
   list-style-type: none;
   padding-left: 0;
   display: flex;
@@ -56,7 +56,7 @@ nav.games ul {
   flex-wrap: wrap;
 }
 
-nav.games ul span {
+nav.games a span {
   display: block;
   text-align: center;
   margin-top: .5em;
@@ -64,7 +64,7 @@ nav.games ul span {
   border-radius: 1em;
 }
 
-nav.games ul li a {
+nav.games a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,7 +91,7 @@ nav.games img {
 
 /* BIGGIES */
 
-nav.games.biggies ul li {
+nav.games.biggies a {
   margin-left: 2em;
   margin-right: 2em;
   margin-bottom: 3em;
@@ -99,13 +99,13 @@ nav.games.biggies ul li {
 
 /* SMALLIES */
 
-nav.games.smallies ul li {
+nav.games.smallies a {
   margin-left: .5em;
   margin-right: .5em;
   margin-bottom: 3em;
 }
 
-nav.games.smallies ul span {
+nav.games.smallies span {
   text-transform: uppercase;
   margin-top: .25em;
 }
