@@ -10,8 +10,11 @@ html {
 body,
 footer {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: 1.5em;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(33px, 1fr) minmax(33px, 1fr) minmax(33px, 1fr) minmax(33px, 1fr) minmax(33px, 1fr) minmax(33px, 1fr)
+  );
+  column-gap: 1.5vw;
 }
 
 body {
@@ -41,11 +44,55 @@ header {
   grid-column-end: -2;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 header img {
   max-height: 16em;
-  max-width: 100%;
+  width: 100vw;
+}
+
+/* LANGUAGE */
+
+nav.language-switch {
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: .5em;
+}
+
+nav.language-switch::before {
+  width: 24px;
+  height: 24px;
+  margin-right: .5em;
+  display: block;
+  content: "";
+  background-image: url("images/Language-Icon.svg");
+  background-size: cover;
+}
+
+nav.language-switch a {
+  background-color: #fff;
+  width: 24px;
+  height: 24px;
+  margin: 0 .25em;
+  text-align: center;
+  line-height: 23px;
+  border: 2px solid #f8f8f8;
+  border-radius: 50%;
+  color: #000;
+  text-decoration: none;
+}
+
+nav.language-switch a:hover {
+  border-color: #EFD3CD;
+}
+
+nav.language-switch a.selected {
+  background-color: #EF4C24;
+  color: #fff;
 }
 
 /* MAIN */
@@ -54,7 +101,7 @@ main {
   grid-column-start: 2;
   grid-column-end: -2;
 
-  column-width: 17em;
+  column-width: 18em;
   column-gap: 1.5em;
 }
 
@@ -101,10 +148,10 @@ nav.games a span {
 }
 
 nav.games a:hover img {
-  border-color: yellow;
+  border-color: #EFD3CD;
 }
 nav.games a:hover span {
-  background-color: yellow;
+  background-color: #EFD3CD;
 }
 
 /* BIGGIES */
@@ -149,12 +196,12 @@ footer {
   color: #fff;
   padding: 2em 0em;
   grid-column-start: 1;
-  grid-column-end: 13;
+  grid-column-end: -1;
   grid-row-start: -2;
 }
 
 footer p {
-  grid-column: 2 / 12;
+  grid-column: 2 / -2;
 }
 
 footer p a {
