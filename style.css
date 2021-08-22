@@ -60,13 +60,13 @@ nav.language-switch {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 nav.language-switch::before {
   width: 24px;
   height: 24px;
-  margin-right: .5em;
+  margin-right: 0.5em;
   display: block;
   content: "";
   background-image: url("images/Language-Icon.svg");
@@ -77,7 +77,7 @@ nav.language-switch a {
   background-color: #fff;
   width: 24px;
   height: 24px;
-  margin: 0 .25em;
+  margin: 0 0.25em;
   text-align: center;
   line-height: 23px;
   border: 2px solid #f8f8f8;
@@ -87,11 +87,11 @@ nav.language-switch a {
 }
 
 nav.language-switch a:hover {
-  border-color: #EFD3CD;
+  border-color: #efd3cd;
 }
 
 nav.language-switch a.selected {
-  background-color: #EF4C24;
+  background-color: #ef4c24;
   color: #fff;
 }
 
@@ -115,7 +115,6 @@ main p + p {
 }
 
 /* GAMES */
-
 nav.games {
   display: flex;
   justify-content: center;
@@ -147,11 +146,30 @@ nav.games a span {
   border-radius: 1em;
 }
 
-nav.games a:hover img {
-  border-color: #EFD3CD;
+nav.games a:not(.inactive):hover img {
+  border-color: #efd3cd;
 }
-nav.games a:hover span {
-  background-color: #EFD3CD;
+nav.games a:not(.inactive):hover span {
+  background-color: #efd3cd;
+}
+
+/* Inactive games */
+nav.games a.inactive {
+  position: relative;
+}
+
+nav.games a.inactive::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "Kommer snart";
+  background-color: rgba(255, 255, 255, 0.9);
+  display: grid;
+  align-content: center;
+  text-align: center;
+  cursor: default;
 }
 
 /* BIGGIES */
