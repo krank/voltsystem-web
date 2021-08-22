@@ -114,6 +114,11 @@ main p + p {
   text-indent: 1em;
 }
 
+main p.quote-author {
+  text-align: right;
+  font-style: italic;
+}
+
 /* GAMES */
 nav.games {
   display: flex;
