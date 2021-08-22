@@ -96,7 +96,6 @@ nav.language-switch a.selected {
 }
 
 /* MAIN */
-
 main {
   grid-column-start: 2;
   grid-column-end: -2;
